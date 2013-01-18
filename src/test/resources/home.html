@@ -1,0 +1,28 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-3.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>My first template with Thymeleaf</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <p th:text="#{hello.world}">Hello</p>
+    <p th:text="${date}">The date</p>
+
+    <div th:object="${contact}">
+        <p>First name: <span th:text="*{firstname}">First name</span></p>
+        <p>Last name: <span th:text="*{lastname}">Last name</span></p>
+    </div>
+
+    <table th:if="${not #lists.isEmpty(contacts)}">
+        <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+        </tr>
+        <tr th:each="contact : ${contacts}">
+             <td th:text="${contact.lastname}">The first name</td>
+             <td th:text="${contact.firstname}">The last name</td>
+        </tr>
+    </table>
+</body>
+</html>
