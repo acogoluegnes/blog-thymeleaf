@@ -13,8 +13,8 @@
         <th>Lastname</th>
     </tr>
     <tr th:each="contact : ${contacts}">
-        <td th:text="${contact.lastname}">The first name</td>
-        <td th:text="${contact.firstname}">The last name</td>
+        <td th:text="${contact.firstname}">The first name</td>
+        <td th:text="${contact.lastname}">The last name</td>
     </tr>
 </table>
 
