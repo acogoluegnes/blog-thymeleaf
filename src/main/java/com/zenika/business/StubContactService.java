@@ -3,11 +3,13 @@ package com.zenika.business;
 import com.zenika.Contact;
 
 import java.util.*;
+import org.springframework.stereotype.Service;
 
 /**
  *
  *
  */
+@Service
 public class StubContactService implements ContactService {
 
     private final Map<Long,Contact> contacts = new LinkedHashMap<Long, Contact>() {{
