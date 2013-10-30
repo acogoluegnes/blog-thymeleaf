@@ -1,5 +1,6 @@
 package com.zenika;
 
+import com.zenika.business.StubContactService;
 import com.zenika.web.ContactController;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -14,10 +15,11 @@ import org.thymeleaf.templateresolver.ClassLoaderTemplateResolver;
  *
  */
 @Configuration
-@ComponentScan(basePackageClasses = ContactController.class)
+@ComponentScan(basePackageClasses = {ContactController.class, StubContactService.class})
 public class ContactConfiguration {
 
-    @Bean public ViewResolver viewResolver() {
+    @Bean
+    public ViewResolver viewResolver() {
         ClassLoaderTemplateResolver templateResolver = new ClassLoaderTemplateResolver();
         templateResolver.setTemplateMode("XHTML");
         templateResolver.setPrefix("views/");
